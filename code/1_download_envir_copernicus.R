@@ -1,5 +1,6 @@
 library(ncdf4)
 library(raster)
+library(lubridate)
 
 
 # COPERNICUS --------------------------------------------------------------
