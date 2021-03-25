@@ -5,12 +5,12 @@ library(plyr)
 # ADD ENVIR DATA TO PRESENCE ----------------------------------------------
 # -------------------------------------------------------------------------
 
-#LEER BASE DE DATOS
+#READ DATABASE
 presence <- read.table(file = "data/presence_sp.txt", header = TRUE, sep = " ")
 head(presence)
 
 
-#PROCESO PARA AGREGAR LAS VARIABLES AMBIENTALES DEL DÍA A LOS DATOS DE PRESENCIA
+#PROCESS TO ADD THE ENVIRONMENTAL VARIABLES TO THE PRESENCE DATA 
 lab_date <- unique(presence$eventDate)
 
 out <- list()
@@ -24,8 +24,8 @@ for(i in seq_along(lab_date)){
 }
 
 
-#Junta las listas en un solo data.frame
+#GET A DATAFRAME
 presence_copernicus <- plyr::ldply(out, data.frame)
 
-#Guardar la base de datos de presencia con su correspodientes variables ambientales que corresponde al día 
+#SAVE PRESENCE + ENVIRDATA 
 write.csv(x = presence_copernicus, file = "output/presence_copernicus.csv", row.names = FALSE)
