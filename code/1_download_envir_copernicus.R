@@ -44,15 +44,15 @@ x_sss <- ncvar_get(sss_cop, sss_cop$var[[1]]$name)
 # Chlorophyll -------------------------------------------------------------
 chl_cop <- nc_open("data/daily/global-reanalysis-bio-001-029-daily_chlorophyll.nc")
 
-# obtener longitude and latitude
+# get longitude and latitude
 lon_chl <- ncvar_get(chl_cop, "longitude")
 lat_chl <- ncvar_get(chl_cop,"latitude")
 
-# obtener time
+# get time
 time_chl <- ncvar_get(chl_cop,"time")
 date_chl <- as.Date(as.POSIXct(time_chl*3600, origin = '1950-01-01 00:00'))
 
-# obtener chl
+# get chl
 x_chl <- ncvar_get(chl_cop, chl_cop$var[[1]]$name)
 
 
@@ -126,16 +126,16 @@ for(i in seq_along(labelTime)){
 # Sea Surface Temperature -------------------------------------------------
 sst_cop <- nc_open("data/monthly/global-reanalysis-phy-001-030-monthly_sea_surface_temperature.nc")
 
-# obtener longitude and latitude
+# get longitude and latitude
 lon_sst <- ncvar_get(sst_cop, "longitude")
 lat_sst <- ncvar_get(sst_cop,"latitude")
 
-# obtener time
+# get time
 time_sst <- ncvar_get(sst_cop,"time")
 date_sst <- as.Date(as.POSIXct(time_sst*3600, origin = '1950-01-01 00:00'))
 date_sst <- as.Date(paste0(year(date_sst), "-", month(date_sst), "-", 16), format =  "%Y-%m-%d")
 
-# obtener sst
+# get sst
 x_sst <- ncvar_get(sst_cop, sst_cop$var[[1]]$name)
 
 
@@ -143,16 +143,16 @@ x_sst <- ncvar_get(sst_cop, sst_cop$var[[1]]$name)
 # Sea Surface Salinity ---------------------------------------------------
 sss_cop <- nc_open("data/monthly/global-reanalysis-phy-001-030-monthly_sea_surface_salinity.nc")
 
-# obtener longitude and latitude
+# get longitude and latitude
 lon_sss <- ncvar_get(sss_cop, "longitude")
 lat_sss <- ncvar_get(sss_cop,"latitude")
 
-# obtener time
+# get time
 time_sss <- ncvar_get(sss_cop,"time")
 date_sss <- as.Date(as.POSIXct(time_sss*3600, origin = '1950-01-01 00:00'))
 date_sss <- as.Date(paste0(year(date_sss), "-", month(date_sss), "-", 16), format =  "%Y-%m-%d")
 
-# obtener sss
+# get sss
 x_sss <- ncvar_get(sss_cop, sss_cop$var[[1]]$name)
 
 
@@ -160,16 +160,16 @@ x_sss <- ncvar_get(sss_cop, sss_cop$var[[1]]$name)
 # Chlorophyll -------------------------------------------------------------
 chl_cop <- nc_open("data/monthly/global-reanalysis-bio-001-029-monthly_chlorophyll.nc")
 
-# obtener longitude and latitude
+# get longitude and latitude
 lon_chl <- ncvar_get(chl_cop, "longitude")
 lat_chl <- ncvar_get(chl_cop,"latitude")
 
-# obtener time
+# get time
 time_chl <- ncvar_get(chl_cop,"time")
 date_chl <- as.Date(as.POSIXct(time_chl*3600, origin = '1950-01-01 00:00'))
 date_chl <- as.Date(paste0(year(date_chl), "-", month(date_chl), "-", 16), format =  "%Y-%m-%d")
 
-# obtener chl
+# get chl
 x_chl <- ncvar_get(chl_cop, chl_cop$var[[1]]$name)
 
 
@@ -210,7 +210,7 @@ for(i in seq_along(label)){
 
 
 
-# UNIFORME EXTENT Y RESOLUTION ------------------------------------------
+# UNIFORME EXTENT AND RESOLUTION ------------------------------------------
 minDate <- as.Date('2014-01-16')
 maxDate <- as.Date('2015-12-16')
 labelTime <- seq(minDate, maxDate, by = "month")
